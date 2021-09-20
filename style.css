@@ -1,0 +1,52 @@
+body {
+  --tonic-body: "Inter", sans-serif;
+  --tonic-header: "Inter Black", sans-serif;
+  --tonic-subheader: "Inter Medium", sans-serif;
+  --tonic-monospace: "FiraMono", monospace;
+
+  background: var(--tonic-background);
+  color: var(--tonic-primary);
+  font-family: var(--tonic-body);
+  margin: 0;
+}
+
+body,
+*[theme="dark"] {
+  --tonic-background: rgba(40, 40, 40, 1);
+  --tonic-window: rgba(49, 49, 49, 1);
+  --tonic-accent: rgba(56, 185, 255, 1);
+  --tonic-primary: rgba(255, 255, 255, 1);
+  --tonic-secondary: rgba(195, 195, 195, 1);
+  --tonic-medium: rgba(153, 157, 160, 1);
+  --tonic-dark: rgba(41, 41, 41, 1);
+  --tonic-shadow: rgba(0, 0, 0, 0.3);
+  --tonic-disabled: rgba(170, 170, 170, 1);
+  --tonic-button-text: rgba(255, 255, 255, 1);
+  --tonic-button-shadow: rgba(0, 0, 0, 1);
+  --tonic-button-background: rgba(74, 74, 74, 1);
+  --tonic-button-background-hover: rgba(94, 94, 94, 1);
+  --tonic-button-background-focus: rgba(84, 84, 84, 1);
+  --tonic-input-text: rgba(255, 255, 255, 1);
+  --tonic-input-text-hover: rgba(255, 255, 255, 1);
+  --tonic-input-background: rgba(45, 45, 45, 1);
+  --tonic-input-background-focus: rgba(30, 30, 30, 1);
+  --tonic-input-border: rgba(80, 80, 80, 1);
+  --tonic-input-border-hover: rgba(105, 105, 105, 1);
+  --tonic-border: rgba(72, 72, 72, 1);
+  --tonic-border-accent: rgba(90, 90, 90, 1);
+  --tonic-error: rgba(240, 102, 83, 1);
+  --tonic-notification: rgba(240, 102, 83, 1);
+  --tonic-caution: rgba(240, 102, 83, 1);
+  --tonic-success: rgba(133, 178, 116, 1);
+  --tonic-warn: rgba(249, 169, 103, 1);
+  --tonic-overlay: rgba(0, 0, 0, 0.4);
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: var(--tonic-header);
+}

@@ -1,0 +1,29 @@
+{
+  "name": "tonic-todo-app",
+  "version": "1.0.0",
+  "description": "A simple todo app written with https://tonicframework.dev/ ",
+  "main": "main.js",
+  "scripts": {
+    "postinstall": "node ./scripts/install-modules.mjs"
+  },
+  "keywords": [
+    "jamstack",
+    "tonic",
+    "web-components"
+  ],
+  "author": "Nicholas Mitchell",
+  "license": "MIT",
+  "dependencies": {
+    "@optoolco/components": "^12.3.19",
+    "@optoolco/tonic": "^13.3.5"
+  },
+  "esinstall": {
+    "install": [
+      "@optoolco/components",
+      "@optoolco/tonic"
+    ]
+  },
+  "devDependencies": {
+    "esinstall": "1.1.7"
+  }
+}
