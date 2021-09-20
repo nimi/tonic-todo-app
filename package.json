@@ -4,6 +4,7 @@
   "description": "A simple todo app written with https://tonicframework.dev/ ",
   "main": "main.js",
   "scripts": {
+    "build": "echo 'No build needed 🤘🏻'",
     "postinstall": "node ./scripts/install-modules.mjs"
   },
   "keywords": [
