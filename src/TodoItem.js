@@ -12,10 +12,13 @@ function TodoItem() {
       `}"
         style="${done ? "text-decoration: line-through;" : ""}"
       >
-        <tonic-checkbox value="${done}" class="${css`
-    margin-top: -0.5rem;
-    margin-left: -0.5rem;
-  `}" id="${id}"></tonic-checkbox> ${title}
+        <tonic-checkbox
+          value="${done}"
+          class="${css`
+            margin-top: -0.5rem;
+            margin-left: -0.5rem;
+          `}" id="${id}">
+        </tonic-checkbox> ${title}
       </div>
     </li>
   `
