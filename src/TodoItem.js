@@ -21,8 +21,4 @@ function TodoItem() {
   `
 }
 
-TodoItem.prototype.click = () => {
-  console.log("clicked")
-}
-
 export default TodoItem
