@@ -2,6 +2,27 @@ import Tonic from "../web_modules/@optoolco/tonic.js"
 
 import { css, GlobalStyles } from "./styles.js"
 
+const INITIAL_STATE = {
+  todos: [
+    {
+      title: "Write JavaScript",
+      done: false,
+      id: "js-1",
+    },
+    {
+      title: "Write TypeScript",
+      done: false,
+      id: "ts-2",
+    },
+    {
+      title: "Write Rust",
+      done: false,
+      id: "rust-3",
+    },
+  ],
+  newTodoValue: "",
+}
+
 class TodoApp extends Tonic {
   static stylesheet() {
     return GlobalStyles()
@@ -9,24 +30,8 @@ class TodoApp extends Tonic {
 
   constructor() {
     super()
-    this.state.newTodoValue = ""
-    this.state.todos = [
-      {
-        title: "Write JavaScript",
-        done: false,
-        id: "js-1",
-      },
-      {
-        title: "Write TypeScript",
-        done: false,
-        id: "ts-2",
-      },
-      {
-        title: "Write Rust",
-        done: false,
-        id: "rust-3",
-      },
-    ]
+    this.state.newTodoValue = INITIAL_STATE.newTodoValue
+    this.state.todos = INITIAL_STATE.todos
   }
 
   connected() {
@@ -51,7 +56,7 @@ class TodoApp extends Tonic {
       return
     }
 
-    this.state.newTodoValue = ""
+    this.state.newTodoValue = INITIAL_STATE.newTodoValue
     this.state.todos = [
       ...this.state.todos,
       {
