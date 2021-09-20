@@ -7,9 +7,84 @@ class TodoApp extends Tonic {
     return GlobalStyles()
   }
 
+  constructor() {
+    super()
+    this.state.newTodoValue = ""
+    this.state.todos = [
+      {
+        title: "Write JavaScript",
+        done: false,
+        id: "js-1",
+      },
+      {
+        title: "Write TypeScript",
+        done: false,
+        id: "ts-2",
+      },
+      {
+        title: "Write Rust",
+        done: false,
+        id: "rust-3",
+      },
+    ]
+  }
+
+  connected() {
+    const input = document.querySelector("#tonic--input_new-todo")
+
+    input.focus()
+  }
+
+  updated() {
+    const input = document.querySelector("#tonic--input_new-todo")
+
+    input.focus()
+  }
+
+  submit(e) {
+    e.preventDefault()
+
+    const input = document.querySelector("#tonic--input_new-todo")
+    const value = input.value
+
+    if (!input.value) {
+      return
+    }
+
+    this.state.newTodoValue = ""
+    this.state.todos = [
+      ...this.state.todos,
+      {
+        title: value,
+        done: false,
+        id: `${value}-${this.state.todos.length}`,
+      },
+    ]
+
+    this.reRender()
+
+    input.focus()
+  }
+
+  change(e) {
+    if (e.target.id.includes("new-todo")) {
+      this.state.newTodoValue = e.target.value
+    } else {
+      const id = e.target.id
+      const done = e.target.value
+      this.state.todos.forEach((todo) => {
+        if (todo.id !== id) return
+        todo.done = done
+      })
+    }
+    this.reRender()
+  }
+
   render() {
+    const { todos, newTodoValue } = this.state
+
     return this.html`
-      <div class="${css`
+      <div id="todo-app" class="${css`
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -27,17 +102,24 @@ class TodoApp extends Tonic {
             <tonic-sprite></tonic-sprite>
           </div>
           <todo-list>
-            <todo-item></todo-item>
-            <todo-item></todo-item>
-            <todo-item></todo-item>
+            ${todos.map(
+              (todo, index) =>
+                this.html`
+                  <todo-item
+                    id="${todo.id}"
+                    title="${todo.title}"
+                    done="${todo.done}"
+                  ></todo-item>`
+            )}
           </todo-list>
-          <tonic-form></tonic-form>
-          <div class="${css`
-            margin: 1rem 0;
-          `}">
-            <tonic-input id="add-todo"></tonic-input>
-          </div>
-          <tonic-button>Add todo</tonic-button>
+          <form>
+            <div class="${css`
+              margin: 1rem 0;
+            `}">
+              <tonic-input value="${newTodoValue}" id="new-todo"></tonic-input>
+            </div>
+            <tonic-button type="submit">Add todo</tonic-button>
+          </form>
         </div>
       </div>
     `

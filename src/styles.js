@@ -10,6 +10,7 @@ const replacements = {
   ":": "-",
   "%": "pc",
   " ": "-",
+  ".": "-",
 }
 
 export const css = (rules) => {
@@ -24,13 +25,12 @@ export const css = (rules) => {
     .split(";")
     .filter(Boolean)
 
-  console.log(ruleList, rules)
-
   ruleList.forEach((ruleKey) => {
     const className = ruleKey
       .replace(":", replacements[":"])
       .replace("%", replacements["%"])
       .replace(" ", replacements[" "])
+      .replace(".", replacements["."])
     const cssRule = `.${className} { ${ruleKey}; }`
 
     GlobalStylesSet.add(cssRule)
@@ -43,5 +43,6 @@ export const css = (rules) => {
     .replaceAll(":", replacements[":"])
     .replaceAll("%", replacements["%"])
     .replaceAll(" ", replacements[" "])
+    .replaceAll(".", replacements["."])
     .replaceAll("_$", " ")
 }
