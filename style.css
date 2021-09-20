@@ -23,9 +23,9 @@ body,
   --tonic-disabled: rgba(170, 170, 170, 1);
   --tonic-button-text: rgba(255, 255, 255, 1);
   --tonic-button-shadow: rgba(0, 0, 0, 1);
-  --tonic-button-background: rgba(74, 74, 74, 1);
-  --tonic-button-background-hover: rgba(94, 94, 94, 1);
-  --tonic-button-background-focus: rgba(84, 84, 84, 1);
+  --tonic-button-background: rgb(93, 121, 41);
+  --tonic-button-background-hover: rgba(115, 139, 70);
+  --tonic-button-background-focus: rgb(115, 139, 70);
   --tonic-input-text: rgba(255, 255, 255, 1);
   --tonic-input-text-hover: rgba(255, 255, 255, 1);
   --tonic-input-background: rgba(45, 45, 45, 1);

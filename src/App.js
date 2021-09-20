@@ -118,7 +118,7 @@ class TodoApp extends Tonic {
             `}">
               <tonic-input value="${newTodoValue}" id="new-todo"></tonic-input>
             </div>
-            <tonic-button type="submit">Add todo</tonic-button>
+            <tonic-button backgroundColor="green" type="submit">Add todo</tonic-button>
           </form>
         </div>
       </div>

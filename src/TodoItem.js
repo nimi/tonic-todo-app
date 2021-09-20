@@ -3,15 +3,6 @@ import { css } from "./styles.js"
 function TodoItem() {
   const { title = "Todo", done = false, id } = this.props
 
-  this.addEventListener("change", (e) => {
-    const done = e.target.value
-
-    this.reRender({
-      ...this.props,
-      done,
-    })
-  })
-
   return this.html`
     <li>
       <div class="${css`
